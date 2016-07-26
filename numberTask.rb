@@ -1,10 +1,10 @@
-def eachB(numberArray)
-  numberArray.each do |number|
-    if shouldPutsFizz(number) && shouldPutsBuzz(number)
+def buzz_fizz(number_array)
+  number_array.each do |number|
+    if should_puts_fizz(number) && should_puts_buzz(number)
       puts 'BuzzFizz '
-    elsif shouldPutsFizz(number)
+    elsif should_puts_fizz(number)
       puts  'Fizz '
-    elsif shouldPutsBuzz(number)
+    elsif should_puts_buzz(number)
       puts 'Buzz '
     else
       puts "#{number} "
@@ -12,10 +12,10 @@ def eachB(numberArray)
   end
 end
 
-def shouldPutsFizz(number)
+def should_puts_fizz(number)
   number % 3 == 0 || number.to_s.include?('3')
 end
 
-def shouldPutsBuzz(number)
+def should_puts_buzz(number)
   number % 5 == 0 || number.to_s.include?('5')
 end
