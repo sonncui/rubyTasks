@@ -17,6 +17,15 @@ describe NumberTransfer do
         expect(transferred_number).to eq ('ninety nine')
       end
     end
+
+    context 'number from 100 to 999' do
+      it 'should transfer 100 to one handred' do
+        expect(number_transfer.transfer(100)).to eq('one handred')
+      end
+      it 'should transfer 999 to nine handred ninety nine' do
+        expect(number_transfer.transfer(999)).to eq('nine handred ninety nine')
+      end
+    end
   end
   let(:number_transfer) { NumberTransfer.new }
 end

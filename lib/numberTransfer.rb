@@ -1,7 +1,6 @@
 class NumberTransfer
 
   NUMBER_CHARACTER = {
-    0 => 'zero',
     1 => 'one',
     2 => 'two',
     3 => 'three',
@@ -34,21 +33,30 @@ class NumberTransfer
     9 => 'ninety'
   }
 
+  UNIT_NUMBER = {
+    100 => 'handred',
+    1000 => 'thousand',
+    1000000 => 'million',
+    1000000000 => 'trillion'
+  }
+
   def transfer(number)
-    if number <= 19
-      return NUMBER_CHARACTER[number]
+    return 'zero' if number == 0
+    character_string = ''
+    handred_number = number % 1000 / 100
+    double_number = number % 100 / 10
+    single_number = number % 10
+    if handred_number > 0
+      character_string = NUMBER_CHARACTER[handred_number]+ ' ' + UNIT_NUMBER[100]+ ' '
     end
-    if number > 19
-      character_string = ''
-      double_number = number % 100 / 10
-      single_number = number % 10
-      character_string = DOUBLE_NUMBER[double_number]
+    if double_number > 1
+      character_string += DOUBLE_NUMBER[double_number] + ' '
       if single_number > 0
-        character_string +=' ' + NUMBER_CHARACTER[single_number]
+        character_string += NUMBER_CHARACTER[single_number]
       end
-      return character_string
+    elsif single_number > 0
+      character_string += NUMBER_CHARACTER[double_number*10+single_number]
     end
-
+    return character_string.strip
   end
-
 end
