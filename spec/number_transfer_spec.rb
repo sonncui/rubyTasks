@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative('../lib/numberTransfer.rb')
+require_relative('../lib/number_transfer.rb')
 
 describe NumberTransfer do
   describe 'number transfer' do
