@@ -40,13 +40,15 @@ class NumberTransfer
     3 => 'trillion'
   }
 
+  HANDRED = 'handred'
+
   def transfer_inner(number)
     character_string = ''
     handred_number = number % 1000 / 100
     double_number = number % 100 / 10
     single_number = number % 10
     if handred_number > 0
-      character_string = NUMBER_CHARACTER[handred_number]+ ' ' + 'handred' + ' '
+      character_string = NUMBER_CHARACTER[handred_number]+ ' ' + HANDRED + ' '
     end
     if double_number > 1
       character_string += DOUBLE_NUMBER[double_number] + ' '
@@ -67,10 +69,10 @@ class NumberTransfer
 
     while number_s.length >= 1 do
       if number_s.length > 3
-        outer_string = transfer_inner(number_s.slice(-3, 3).to_i) + ' ' + UNIT_NUMBER[unit_count] + outer_string
+        outer_string = transfer_inner(number_s.slice(-3, 3).to_i) + ' ' + UNIT_NUMBER[unit_count]+ ' ' + outer_string
         number_s = number_s.slice(0, number_s.length - 3)
       else
-        outer_string = transfer_inner(number_s.slice(0, 3).to_i) + ' ' + UNIT_NUMBER[unit_count] + outer_string
+        outer_string = transfer_inner(number_s.slice(0, 3).to_i) + ' ' + UNIT_NUMBER[unit_count] + ' ' + outer_string
         number_s = ''
       end
       unit_count = unit_count + 1
