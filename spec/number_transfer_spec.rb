@@ -26,6 +26,12 @@ describe NumberTransfer do
         expect(number_transfer.transfer(999)).to eq('nine handred ninety nine')
       end
     end
+
+    context 'number larger than 1000' do
+      it 'should transfer 1000 to one thousand' do
+        expect(number_transfer.transfer(1000)).to eq('one thousand')
+      end
+    end
   end
   let(:number_transfer) { NumberTransfer.new }
 end
