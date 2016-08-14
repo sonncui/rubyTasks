@@ -1,15 +1,22 @@
 def buzz_fizz(number_array)
+    output_string = buzz_fizz_string number_array
+    puts output_string
+end
+
+def buzz_fizz_string number_array
+  output_string = ''
   number_array.each do |number|
     if should_puts_fizz(number) && should_puts_buzz(number)
-      puts 'BuzzFizz '
+      output_string += 'FizzBuzz '
     elsif should_puts_fizz(number)
-      puts  'Fizz '
+      output_string += 'Fizz '
     elsif should_puts_buzz(number)
-      puts 'Buzz '
+      output_string += 'Buzz '
     else
-      puts "#{number} "
+      output_string += "#{number} "
     end
   end
+  output_string.strip
 end
 
 def should_puts_fizz(number)
