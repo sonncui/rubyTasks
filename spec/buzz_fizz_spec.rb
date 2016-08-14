@@ -3,6 +3,13 @@ require_relative '../lib/buzz_fizz.rb'
 
 describe 'BuzzFizz' do
 
+  it 'should print 0 when given NaN' do
+    out, err = capture_io do
+      buzz_fizz(['NaN'])
+    end
+    assert_equal '0', out
+  end
+
   it 'should return 1 2 Fizz Fizz when given 1 2 3 13' do
     out, err = capture_io do
       buzz_fizz([1, 2, 3, 13])

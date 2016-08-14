@@ -62,6 +62,7 @@ class NumberTransfer
   end
 
   def transfer(number)
+    number = number.to_i
     return 'zero' if number == 0
     unit_count = 0
     number_s = number.to_s

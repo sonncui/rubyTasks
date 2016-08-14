@@ -6,7 +6,9 @@ end
 def buzz_fizz_string number_array
   output_string = ''
   number_array.each do |number|
-    if should_puts_fizz(number) && should_puts_buzz(number)
+    if number.to_i == 0
+      output_string = '0'
+    elsif should_puts_fizz(number) && should_puts_buzz(number)
       output_string += 'FizzBuzz '
     elsif should_puts_fizz(number)
       output_string += 'Fizz '

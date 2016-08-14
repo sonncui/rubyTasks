@@ -6,6 +6,11 @@ describe NumberTransfer do
     before do
       @number_transfer = NumberTransfer.new
     end
+    describe 'NaN' do
+      it 'should return zero when given NaN' do
+        assert_equal 'zero', @number_transfer.transfer('')
+      end
+    end
     describe 'number from 0 to 99' do
       it 'should transfer 0 to character' do
         transferred_number = @number_transfer.transfer(0)
