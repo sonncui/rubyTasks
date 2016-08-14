@@ -1,6 +1,6 @@
 def buzz_fizz(number_array)
     output_string = buzz_fizz_string number_array
-    puts output_string
+    print output_string
 end
 
 def buzz_fizz_string number_array
