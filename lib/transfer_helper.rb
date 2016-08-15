@@ -32,7 +32,7 @@ module Helper
     9 => 'ninety'
   }
 
-  UNIT_NUMBER = {
+  NUMBER_UNIT = {
     0 => '',
     1 => 'thousand',
     2 => 'million',
