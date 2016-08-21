@@ -1,4 +1,4 @@
-require_relative './transfer_helper'
+require_relative 'helper/transfer_helper'
 
 class NumberTransfer
   include Helper
