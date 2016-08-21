@@ -1,5 +1,6 @@
-task :default => [:test]
+require 'rake'
 
-task :test do
-  Dir.glob('./spec/*_spec.rb').each {|file| require file }
-end
+Dir.glob('./tasks/*.rake').each {|task| load(task)}
+
+desc 'default run all tests.'
+task :default => 'test'

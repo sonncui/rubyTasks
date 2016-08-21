@@ -21,7 +21,7 @@ module Helper
     19 => 'nineteen'
   }
 
-  DOUBLE_NUMBER = {
+  TENS_NUMBER = {
     2 => 'twenty',
     3 => 'thirty',
     4 => 'fourty',
